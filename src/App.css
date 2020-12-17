@@ -1,0 +1,37 @@
+
+html{
+    font-size:16px;
+}
+
+*, *::before, *::after{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:"Ubuntu", "sans-serif";
+}
+body{
+    padding: 10px 10vw;
+    background:darkcyan;
+    
+}
+ul, ol, li{
+    list-style:none;
+}
+a{
+    text-decoration: none;
+}
+.App{
+    display:grid;
+    grid-template-areas: "a a a" "b b d";
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 10fr 2fr;
+    grid-gap:10px;
+
+}
+
+.main{
+    grid-area:b;
+}
+.nav{
+    grid-area:d;
+}
