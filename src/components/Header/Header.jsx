@@ -1,20 +1,18 @@
 import classes from "./Header.module.css";
+import logo from "../../images/logo.png";
+import set from "../../images/set.png";
 
 
 const Header = () => {
     return (
 
-        <header className={classes.header}>
-            <ul className="headerItems">
-                <li className="headerLi">Home</li>
-                <li className="headerLi">Gallery</li>
-                <li className="headerLi">News</li>
-                <li className="headerLi">Friends</li>
-            </ul>
-            <ul className="account">
-                <li className="accLi">Sign In</li>
-                <li className="accLi">Sign Up</li>
-            </ul>
+        <header className={`bg_container ${classes.header}`}>
+            <div className={classes.headerItems}>
+            <img className={classes.logo} src={logo} />
+            <input className={classes.search} type="text" placeholder="Поиск..." />
+            <img className={classes.settingsLogo} src={set} />
+            </div>
+            
         </header>
     )
 } 

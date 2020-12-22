@@ -1,4 +1,20 @@
 .header{
     grid-area:a;
-    background:lightslategrey;
+    
+}
+.headerItems{
+    display:inline-block;
+}
+.logo{
+    height:60px;
+    width:60px;
+
+}
+.search{
+    height:30px;
+    width:120px;
+}
+.settingsLogo{
+    height:60px;
+    width:60px;
 }
