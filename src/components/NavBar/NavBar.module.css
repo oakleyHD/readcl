@@ -1,3 +1,16 @@
 .nav{
     grid-area:d;
+    padding-top:15px;
+    position:sticky;
+    top:60px;
+    max-height:110vh;
+}
+.panelItems{
+  margin-bottom:10px;
+  text-align: center;
+  
+}
+.panelItems > a{
+    color:white;
+    text-decoration:none;
 }
