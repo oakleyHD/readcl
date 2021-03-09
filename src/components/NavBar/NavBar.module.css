@@ -14,3 +14,7 @@
     color:white;
     text-decoration:none;
 }
+
+.panelItems > a.activeLink{
+  color:red;
+}

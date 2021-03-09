@@ -1,124 +1,14 @@
 import classes from "./Main.module.css";
-import logo from "../../images/logo.png";
-
-const Main = ()=> {
-    return(
+import { Route } from "react-router-dom";
+import Profile from "./Profile/Profile";
+import Dialogs from "./Dialogs/Dialogs";
+import News from "./News/News";
+const Main = (props) => {
+    return (
         <main className={`bg_container ${classes.main}`}>
-         <img src={logo} />
-         <h4>Your Account</h4>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-         <p>Message</p>
-
+            <Route exact path={["/","/profile"]} render={()=> <Profile />} />
+            <Route path="/dialogs" render={()=> <Dialogs  />} />
+            <Route path="/news" render={()=><News /> } />
         </main>
     )
 }

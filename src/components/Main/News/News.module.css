@@ -1,0 +1,14 @@
+.newsBlock{
+    height: auto;
+    width:953px;
+    background:purple;
+    color:white;
+}
+.newsArticle{
+    height:auto;
+    width:500px;
+    background: white;
+    color:black;
+    padding:20px;
+    margin-left:220px;
+}

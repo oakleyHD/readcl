@@ -1,0 +1,25 @@
+.message{
+    height:50px;
+    width:500px;
+    display:flex;
+    align-items:middle;
+    background:blueviolet;
+    border-radius:5px;
+    margin-left:20px;
+}
+.msAvatar{
+    width:50px;
+    height:43px;
+    border-radius:100%;
+}
+.submit{
+    color:white;
+    margin-top: 15px;
+}
+textarea{
+    height:40px;
+    margin-top:4px;
+    border:none;
+    border-radius:7px;
+    background:turquoise;
+}

@@ -4,13 +4,13 @@ import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import NavBar from './components/NavBar/NavBar';
 
-function App() {
+const App = (props)=> {
   return (
     <div className="App">
        <Header />
-       <Main />
+       <Main  />
        <NavBar />
-
+ 
     </div>
   );
 }
