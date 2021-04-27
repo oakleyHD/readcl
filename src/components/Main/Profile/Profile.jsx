@@ -1,14 +1,21 @@
 import classes from "./Profile.module.css";
-import logo from "../../../images/logo.png";
+
 import MyPostContainer from "./MyPosts/MyPostContainer";
+import Preloader from "./PrPreloader";
 
 const Profile = (props) => {
+    if(!props.profile) return <Preloader />
     return (
         <div className={classes.profile}>
             <div className={classes.editProfile}>
-                <img src={logo} className={classes.profileLogo} />
-                <h4>Username</h4>
-               <br /><button className={classes.profileEditBut}>Edit Profile</button>
+                <div>
+                    <img src={props.profile.url} className={classes.profileLogo} />
+                </div>
+                <div>
+                    <h4 className={classes.editProfile__userName}>Username</h4>
+                    <div className={classes.profileEditBut}>Hello World!</div>
+               </div>
+                
             </div>
              <MyPostContainer />
         </div>

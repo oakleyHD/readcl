@@ -5,21 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import store from "./redux/reduxStore";
-import storeContext from './storeContext';
+import { Provider } from "react-redux";
 
 
-const renderEntireThree = () => {
-  ReactDOM.render(
+
+ReactDOM.render(
     <BrowserRouter>
-      <storeContext.Provider value={store} >
+      <Provider store={store} >
        <App  />
-      </storeContext.Provider>
+      </Provider>
     </BrowserRouter>,
     document.getElementById('root')
-  );
-}
-store.subscribe(renderEntireThree);
-renderEntireThree();
+);
+
+
 
 
 
@@ -31,4 +30,5 @@ reportWebVitals();
 /*
 npm install react-router-dom --save
 npm install redux --save
+npm install react-redux --save
 */

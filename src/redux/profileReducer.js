@@ -1,45 +1,45 @@
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SET_USER_PROFILE = "SET_USER_PROFILE";
+const SET_POST = "SET_POST";
+const DELETE_POST = "DELETE_POST";
 
 let innitialState = {
     newPostText: 'Hello World!',
-            postData: [
-                { post: "Hello", id: 11 },
-                { post: "Hello, world!", id: 10 },
-                { post: "Bye", id: 9 },
-                { post: "Apple", id: 8 },
-                { post: "Hello", id: 7 },
-                { post: "Hello, world!", id: 6 },
-                { post: "Bye", id: 5 },
-                { post: "Apple", id: 4 },
-                { post: "Hello", id: 3 },
-                { post: "Hello, world!", id: 2 },
-                { post: "Bye", id: 1 },
-                { post: "Apple", id: 0 },
-            ],
+    profile: null,
+    postData: [],
 }
 
-const profileReducer = (state = innitialState, action)=>{
+const profileReducer = (state = innitialState, action) => {
     switch (action.type) {
         case ADD_POST:
-            let newPost = {
-                post: state.newPostText,
-                id: state.postData[0].id + 1
+            if (state.newPostText !== '') {
+                
+                return { ...state, postData: [ ...state.postData,action.post], newPostText: "" };
             }
-            state.postData.unshift(newPost);
-            state.newPostText = '';
             return state;
+
+
         case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newPostText;
-            return state;
+
+            return { ...state, newPostText: action.newPostText };
+        
+        case SET_USER_PROFILE:
+            return { ...state, profile: action.profile};
+        case SET_POST:
+            return{ ...state, postData: action.postData};
         default:
             return state;
-    } 
+    }
+
 };
 
-export const addPostAC = () => {
+
+
+export const addPostAC = (post) => {
     return {
         type: ADD_POST,
+        post: post,
     }
 
 
@@ -50,6 +50,25 @@ export const updateNewPTAC = (text) => {
         newPostText: text,
     }
 }
+export const setUserProfileAC = (profile)=>{
+    return{
+        type: SET_USER_PROFILE,
+        profile,
+    }
+}
+export const setPost = (postData)=>{
+    return  {
+        type: SET_POST,
+        postData,
+    }
+}
+export const deletePost = (id)=>{
+    return{
+        type: DELETE_POST,
+        id,
+    }
+}
+
 export default profileReducer;
 
 

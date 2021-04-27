@@ -1,0 +1,40 @@
+.userInfo{
+    display:grid;
+    grid-template-columns: 4fr 8fr;
+    grid-template-rows: auto;
+    grid-gap:10px;
+    padding-left:10px;
+    margin-bottom:20px;
+}
+.userInfo > div{
+    /* flex-basis: 300px; */
+    
+}
+.info{
+    background:white;
+    padding:15px;
+    border-radius:4px;
+    
+    
+}
+.userName{
+    color:red;
+}
+.userEmail{
+    color:blue;
+}
+.userAdress{
+    color:lightcoral;
+}
+.userPhone{
+    color:cyan;
+}
+.userComp{
+    color:purple;
+}
+.buttonUs{
+    color:white;
+    background:black;
+    border:none;
+    border-radius:4px;
+}

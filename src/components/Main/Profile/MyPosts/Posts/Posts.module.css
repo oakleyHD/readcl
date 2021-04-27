@@ -1,11 +1,22 @@
 .messageShow{
     width:500px;
-    height:43px;
-    margin-left:20px;
+    min-height:43px;
+    
     color:white;
     background:blueviolet;
-    margin-top:10px;
-    padding-left:20px;
+    padding:10px;
     border-radius:5px;
-    padding-top:12px;
+    
+}
+.post{
+    display:flex;
+    
+    grid-gap:10px;
+    margin:20px;
+   
+    
+}
+
+.delBut{
+    align-self:flex-end;
 }

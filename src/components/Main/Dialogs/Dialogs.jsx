@@ -1,11 +1,11 @@
 import classes from "./Dialogs.module.css";
 import Dialog from "./Dialog/Dialog";
-import MyPostContainer from "../Profile/MyPosts/MyPostContainer";
+import DialogContainer from "./Dialog/DialogContainer";
 
 const Dialogs = (props) => {
     return (
         <div className={classes.dialogs}>
-           <MyPostContainer store={props.store} />
+           <DialogContainer store={props.store} />
         </div>
     )
 }

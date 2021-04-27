@@ -2,26 +2,78 @@ import Posts from "./Posts/Posts";
 import classes from "./MyPosts.module.css";
 import logo from "../../../../images/logo.png";
 import React from "react";
-import { addPostAC, updateNewPTAC } from "../../../../redux/profileReducer";
+import axios from "axios";
+import { useEffect } from "react";
+
+
 
 
 const MyPosts = (props) => {
     const onNewMessageCh = (event) => {
+
         let text = event.target.value;
-        props.onNewMessageCh(text);
+
+        props.updateNewPTAC(text);
 
 
     }
+
+    useEffect(() => {
+        if (props.postData.length == 0) {
+            axios.get("https://jsonplaceholder.typicode.com/posts")
+                .then((response) => {
+                    props.setPost(response.data);
+                })
+
+
+        }
+    }, []);
     // let newPost = React.createRef();
     // const newPostChange = () => {
     //     let text = newPost.current.value;
     //     let action = updateNewPTAC(text);
     //     props.dispatch(action);
     // }
+    /* const addMessage = () => {
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify({
+                title: props.newPostText,
+                body: props.newPostText,
+                userId: props.postData[props.postData.length -1].id+1,
+                id: props.postData[props.postData.length -1].id+1,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((postData) => props.addPostAC(postData));
+    }; */
     const addMessage = () => {
-        props.addMessage();
+        axios.post('https://jsonplaceholder.typicode.com/posts', {
+            body: JSON.stringify({
+                title: props.newPostText,
+                body: props.newPostText,
+                userId: props.postData[props.postData.length -1].id+1,
+                id: props.postData[props.postData.length -1].id+1,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            
+            .then((response) => JSON.parse(response.data.body))
+            .then((post) => props.addPostAC(post));
+            
+            
     };
-    let postElements = props.postData.map((i) => <Posts post={i.post} id={i.id} />);
+    const deletePost = (id)=>{
+        
+    }
+
+
+    let postElements = props.postData.map((i) => <Posts body={i.body} id={i.id} key={i.id} />).reverse();
 
     return (
         <div>
@@ -32,6 +84,8 @@ const MyPosts = (props) => {
             </div>
             <div>
                 {postElements}
+                
+
             </div>
         </div>
     )

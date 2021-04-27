@@ -4,10 +4,15 @@ import classes from "./Posts.module.css";
 
 const Posts = (props)=>{
     return(
-        <NavLink to={`/profile/${props.id}`}>
+        <NavLink className={classes.post} to={`/profile/${props.id}`}>
             <div className={classes.messageShow}>
-                {props.post}
+                {props.body}
+               
             </div>
+            <div className={classes.delBut}>
+                <button >Delete</button>
+            </div>
+             
         </NavLink>
     )
 }

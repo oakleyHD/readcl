@@ -37,3 +37,13 @@ a{
     background:linear-gradient(0deg, blue, rgb(43, 97, 116));
     box-shadow: 8px 8px 7px -1px gray;
 }
+.btn{
+    background:darkslategray;
+    color:white;
+    border:none;
+    border-radius:7px;
+    transition:0.6s;
+}
+.btn:hover{
+    background:blueviolet;
+}
